@@ -536,8 +536,8 @@ gboolean ask_for_golden_score(void)
                                           "4:00 min",       Q_GS_4_00,
                                           "5:00 min",       Q_GS_5_00,
                                           NULL);
-
-    gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
+//Modified GTK_WIN_POS_CENTER to CENTER_ON_PARENT, as this makes the screen center on the parent window instead of on the center of the main display.
+    gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ON_PARENT);
     response = gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(dialog);
 
@@ -581,7 +581,8 @@ static void ask_for_hantei(void)
                                           _("Blue wins"),      Q_HANTEI_BLUE,
                                           _("White wins"),     Q_HANTEI_WHITE,
                                           NULL);
-    gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
+//Modified GTK_WIN_POS_CENTER to CENTER_ON_PARENT, as this makes the screen center on the parent window instead of on the center of the main display.
+    gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ON_PARENT);
 
     response = gtk_dialog_run(GTK_DIALOG(dialog));
     gtk_widget_destroy(dialog);
@@ -787,8 +788,8 @@ static void create_ask_window(void)
         gtk_window_fullscreen(GTK_WINDOW(window));
     else if (show_competitor_names && get_winner(TRUE))
         gtk_widget_set_size_request(GTK_WIDGET(window), width, height);
-
-    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+//Modified GTK_WIN_POS_CENTER to CENTER_ON_PARENT, as this makes the screen center on the parent window instead of on the center of the main display.
+    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER_ON_PARENT);
 
 #if (GTKVER == 3)
     vbox = gtk_grid_new();
@@ -1010,7 +1011,8 @@ void reset(guint key, struct msg_next_match *msg0)
         GtkWidget *darea = gtk_drawing_area_new();
         gtk_container_add(GTK_CONTAINER (window), darea);
 
-        gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER);
+//Modified GTK_WIN_POS_CENTER to CENTER_ON_PARENT, as this makes the screen center on the parent window instead of on the center of the main display.
+        gtk_window_set_position(GTK_WINDOW(dialog), GTK_WIN_POS_CENTER_ON_PARENT);
         response = gtk_dialog_run(GTK_DIALOG(dialog));
         gtk_widget_destroy(dialog);
         asking = FALSE;
