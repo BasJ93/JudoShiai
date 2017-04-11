@@ -2040,7 +2040,7 @@ void display_ad_window(void)
         gtk_window_fullscreen(GTK_WINDOW(window));
     else
         gtk_widget_set_size_request(GTK_WIDGET(window), width, height);
-
+    //Modified GTK_WIN_POS_CENTER to CENTER_ON_PARENT, as this makes the screen center on the parent window instead of on the center of the main display.
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER_ON_PARENT);
 
     gtk_window_set_modal(GTK_WINDOW(window),TRUE);
