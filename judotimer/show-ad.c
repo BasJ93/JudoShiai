@@ -2041,7 +2041,7 @@ void display_ad_window(void)
     else
         gtk_widget_set_size_request(GTK_WIDGET(window), width, height);
 
-    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+    gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER_ON_PARENT);
 
     gtk_window_set_modal(GTK_WINDOW(window),TRUE);
     gtk_window_set_transient_for(GTK_WINDOW(window),GTK_WINDOW(main_window));
